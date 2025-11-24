@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vefsíðugerð - Kynning</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Open+Sans:wght@400;600&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            overflow: hidden;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .slideshow-container {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .slide {
+            display: none; /* Hidden by default */
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: fade 1.5s;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            text-align: center;
+            z-index: 3;
+        }
+
+        .btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: #1a1a1a;
+        }
+
+        /* Dots/circles */
+        .dots-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 3;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        .groups-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            text-align: left;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .group {
+            background: rgba(0,0,0,0.6);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .group h3 {
+            margin-top: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+            color: #ff9800; /* Highlight color */
+        }
+
+        .group ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .group li {
+            padding: 5px 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+    <!-- Slide 1 -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop'); display: flex;">
+        <div class="content">
+            <h1>Skapaðu Þinn Eigin Heim</h1>
+            <p>Velkomin í vefsíðugerð! Í dag látum við hugmyndir verða að veruleika.</p>
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=1920&auto=format&fit=crop');">
+        <div class="content">
+            <h1>Hvað Vilt Þú Gera?</h1>
+            <p>Vefsíða um fótbolta? Tónlist? Matargerð? Eða kannski þitt eigið portfolio?</p>
+            <p>Möguleikarnir eru endalausir.</p>
+        </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1920&auto=format&fit=crop');">
+        <div class="content">
+            <h1>GitHub Copilot Hjálpar Þér</h1>
+            <p>Þú þarft ekki að kunna allan kóðann utanbókar. Notaðu Copilot sem þinn aðstoðarmann til að leysa málin.</p>
+        </div>
+    </div>
+
+    <!-- Slide 3.5 (New Model) -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1920&auto=format&fit=crop');">
+        <div class="content">
+            <h1>Nýr Kraftur: Claude Sonnet 4.5</h1>
+            <p>Þið hafið nú aðgang að einu öflugasta gervigreindarlíkani heims. Kannski eruð þið vön einfaldari módelum eins og gpt-mini?</p>
+            <p>Claude Sonnet 4.5 er miklu snjallari, skilur flóknari hugmyndir og gerir ykkur kleift að skapa hluti sem voru áður óhugsandi.</p>
+        </div>
+    </div>
+
+    <!-- Slide 4 (Video Reveal) -->
+    <div class="slide" style="background-color: black; padding: 0;">
+        <video id="revealVideo" style="width: 100%; height: 100%; object-fit: cover;" muted playsinline>
+            <source src="Animated_Countdown_Video_Generation.mp4" type="video/mp4">
+            Vafra þinn styður ekki myndbandspilun.
+        </video>
+    </div>
+
+    <!-- Slide 5 (Groups) -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920&auto=format&fit=crop');">
+        <div class="content" style="width: 100%; max-width: 1000px;">
+            <h1>Hópaskipting</h1>
+            <div class="groups-grid">
+                <div class="group">
+                    <h3>Hópur 1</h3>
+                    <ul>
+                        <li>Marwa</li>
+                        <li>Hiba</li>
+                        <li>Tymofii</li>
+                        <li>Jón</li>
+                    </ul>
+                </div>
+                <div class="group">
+                    <h3>Hópur 2</h3>
+                    <ul>
+                        <li>Anh Duc</li>
+                        <li>Phatcharapong</li>
+                        <li>Shekofa</li>
+                        <li>Malak omran</li>
+                    </ul>
+                </div>
+                <div class="group">
+                    <h3>Hópur 3</h3>
+                    <ul>
+                        <li>Duong Tuan anh</li>
+                        <li>Dinh</li>
+                        <li>Yasmin</li>
+                        <li>Vitalii Rusakov</li>
+                    </ul>
+                </div>
+                <div class="group">
+                    <h3>Hópur 4</h3>
+                    <ul>
+                        <li>Yorgleidys</li>
+                        <li>viktoriia</li>
+                        <li>Elías Alonso Ramírez Bastidas</li>
+                        <li>Dmytro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop');">
+        <div class="content">
+            <h1>Byrjum Að Kóða!</h1>
+            <p>Opnaðu ritilinn, virkjaðu Copilot og byrjaðu að skapa eitthvað frábært í dag.</p>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="btn" onclick="plusSlides(-1)">&#10094; Til baka</button>
+        <button class="btn" onclick="plusSlides(1)">Áfram &#10095;</button>
+    </div>
+
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+        
+        // Stop all videos when switching slides
+        document.querySelectorAll('video').forEach(video => {
+            video.pause();
+            video.currentTime = 0;
+        });
+
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            slides[i].style.display = "none"; // Ensure clean state
+            slides[i].classList.remove('active-slide'); // Custom class if needed for transitions
+        }
+        
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        
+        let currentSlideElement = slides[slideIndex-1];
+        currentSlideElement.style.display = "flex";  
+        dots[slideIndex-1].className += " active";
+
+        // Auto-play video if present in the current slide
+        let video = currentSlideElement.querySelector('video');
+        if (video) {
+            video.muted = false; // Try to unmute
+            video.play().catch(error => {
+                console.log("Video autoplay failed:", error);
+                video.muted = true; // Fallback to muted autoplay if blocked
+                video.play();
+            });
+            
+            // Go to next slide when video ends
+            video.onended = function() {
+                plusSlides(1);
+            };
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "ArrowLeft") {
+            plusSlides(-1);
+        } else if (event.key === "ArrowRight") {
+            plusSlides(1);
+        }
+    });
+</script>
+
+</body>
+</html>
+
