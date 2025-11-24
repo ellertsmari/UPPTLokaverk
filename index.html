@@ -159,6 +159,75 @@
             padding: 5px 0;
             font-size: 1.1rem;
         }
+
+        .rubric-container {
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        th, td {
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: rgba(255, 152, 0, 0.2);
+            text-align: center;
+        }
+        
+        .sub-header {
+            font-size: 0.7rem;
+            font-weight: normal;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .schedule-container {
+            display: flex;
+            gap: 30px;
+            text-align: left;
+            background: rgba(0,0,0,0.7);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .week-column {
+            flex: 1;
+        }
+
+        .week-column h3 {
+            color: #ff9800;
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .week-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .week-column li {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .week-column strong {
+            color: #4caf50;
+            display: block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -252,6 +321,88 @@
         </div>
     </div>
 
+    <!-- Slide Rubric -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1920&auto=format&fit=crop');">
+        <div class="content" style="max-width: 1200px;">
+            <h1>Námsmat</h1>
+            <div class="rubric-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Viðmið</th>
+                            <th>0-2<br><span class="sub-header">Gerði nánast ekkert</span></th>
+                            <th>3-4<br><span class="sub-header">Gerði mjög lítið</span></th>
+                            <th>5-6<br><span class="sub-header">Gerði verkefnið en það var í lagi</span></th>
+                            <th>7-8<br><span class="sub-header">Gerði það sem var ætlast til</span></th>
+                            <th>9-10<br><span class="sub-header">Gerði meira/betur en var ætlast til</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tímanýting</strong><br>Hvernig nemandinn nýtti tímann í tímum</td>
+                            <td>Nýtti tímann alls ekki, var í símanum eða að gera annað.</td>
+                            <td>Nýtti tímann illa, vann lítið sem ekkert í tímum.</td>
+                            <td>Nýtti tímann sæmilega, vann verkefnið en hefði mátt vera virkari.</td>
+                            <td>Nýtti tímann vel, vann jafnt og þétt allan tímann.</td>
+                            <td>Frábær tímanýting, var alltaf að vinna og nýtti hverja mínútu.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Útlit</strong><br>Hönnun og uppsetning vefsíðunnar</td>
+                            <td>Vefsíðan er ókláruð eða mjög illa uppsett.</td>
+                            <td>Vefsíðan lítur illa út, lítið samræmi í hönnun.</td>
+                            <td>Vefsíðan lítur ágætlega út, en mætti vera betri.</td>
+                            <td>Vefsíðan er falleg og vel uppsett.</td>
+                            <td>Vefsíðan er framúrskarandi, fagmannleg og mjög vel hönnuð.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Virkni</strong><br>Virkar vefsíðan eins og hún á að gera?</td>
+                            <td>Vefsíðan virkar alls ekki eða mjög mikið af villum.</td>
+                            <td>Margir hlutir virka ekki, margar villur.</td>
+                            <td>Flest virkar, en smávægilegar villur eða hnökrar.</td>
+                            <td>Allt virkar eins og það á að gera.</td>
+                            <td>Allt virkar fullkomlega, engar villur og flókin virkni leyst vel.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kynning</strong><br>Hvernig verkefnið var kynnt</td>
+                            <td>Engin kynning eða nemandi neitaði að kynna.</td>
+                            <td>Mjög léleg kynning, nemandi vissi lítið um verkefnið.</td>
+                            <td>Sæmileg kynning, fór yfir helstu atriði en vantaði dýpt.</td>
+                            <td>Góð kynning, fór vel yfir verkefnið og svaraði spurningum.</td>
+                            <td>Framúrskarandi kynning, mjög öruggur flutningur og ítarleg yfirferð.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide Schedule -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1920&auto=format&fit=crop');">
+        <div class="content" style="max-width: 1000px;">
+            <h1>Dagskrá Verkefnisins (30% af lokaeinkunn)</h1>
+            <div class="schedule-container">
+                <div class="week-column">
+                    <h3>Vika 1: Grunnur og Hönnun</h3>
+                    <ul>
+                        <li><strong>Dagur 1:</strong> Hugmyndavinna, uppsetning á GitHub, grunn HTML beinagrind.</li>
+                        <li><strong>Dagur 2:</strong> Safna efni (texti/myndir), byrja á CSS stílfærslu.</li>
+                        <li><strong>Dagur 3:</strong> Framhald á CSS, uppsetning (layout), letur og litir.</li>
+                        <li><strong>Dagur 4:</strong> Gera síðuna responsive (virka í síma), fyrsta yfirferð.</li>
+                    </ul>
+                </div>
+                <div class="week-column">
+                    <h3>Vika 2: Virkni og Frágangur</h3>
+                    <ul>
+                        <li><strong>Dagur 5:</strong> Bæta við virkni (JavaScript), laga hönnunarvankanta.</li>
+                        <li><strong>Dagur 6:</strong> Prófanir, fínpússun á útliti, laga villur.</li>
+                        <li><strong>Dagur 7:</strong> Lokafrágangur á kóða, undirbúningur kynningar.</li>
+                        <li><strong>Dagur 8:</strong> Skil á verkefni og kynningar.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Slide 6 -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop');">
         <div class="content">
@@ -274,6 +425,8 @@
         <span class="dot" onclick="currentSlide(5)"></span>
         <span class="dot" onclick="currentSlide(6)"></span>
         <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+        <span class="dot" onclick="currentSlide(9)"></span>
     </div>
 </div>
 
